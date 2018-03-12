@@ -4,8 +4,142 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "224873a3daef12f1ab48817a04472e3c",
-    "packages": [],
+    "content-hash": "e7d1ce34217affc544e5f949861fd17b",
+    "packages": [
+        {
+            "name": "granam/emojione-micro",
+            "version": "v2.2.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jaroslavtyc/granam-emojione-micro.git",
+                "reference": "24d5df706bf3acc1c9688eefb7abb52a383d942a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jaroslavtyc/granam-emojione-micro/zipball/24d5df706bf3acc1c9688eefb7abb52a383d942a",
+                "reference": "24d5df706bf3acc1c9688eefb7abb52a383d942a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6 || ~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Emojione\\": "lib/php/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(CC-BY-4.0 and MIT)"
+            ],
+            "description": "Extracted Emoji One CSS and converters in PHP / Python / JS / Meteor / Awesome font.",
+            "homepage": "http://www.emojione.com",
+            "keywords": [
+                "Emoji One",
+                "emoji",
+                "emojione",
+                "emojis",
+                "emoticons",
+                "micro",
+                "minified",
+                "php",
+                "python",
+                "small",
+                "smileys",
+                "smilies",
+                "unicode"
+            ],
+            "time": "2017-03-08T12:36:34+00:00"
+        },
+        {
+            "name": "heyupdate/emoji",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heyupdate/emoji.git",
+                "reference": "ce6c189835d22bf72cab63cfe74acf2135742820"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heyupdate/emoji/zipball/ce6c189835d22bf72cab63cfe74acf2135742820",
+                "reference": "ce6c189835d22bf72cab63cfe74acf2135742820",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HeyUpdate\\Emoji\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Convert unicode and named (i.e. :smile:) Emoji into images",
+            "keywords": [
+                "emoji"
+            ],
+            "time": "2016-05-21T10:45:05+00:00"
+        },
+        {
+            "name": "iamcal/php-emoji",
+            "version": "v1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iamcal/php-emoji.git",
+                "reference": "f44c18b8cdec173c6eab618cbdcfcca260eadabe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iamcal/php-emoji/zipball/f44c18b8cdec173c6eab618cbdcfcca260eadabe",
+                "reference": "f44c18b8cdec173c6eab618cbdcfcca260eadabe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/emoji.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cal Henderson",
+                    "email": "cal@iamcal.com",
+                    "homepage": "http://www.iamcal.com/"
+                }
+            ],
+            "description": "This is a PHP library for dealing with Emoji, allowing you to convert between various native formats and displaying them using HTML.",
+            "homepage": "https://github.com/iamcal/php-emoji",
+            "keywords": [
+                "convert",
+                "converter",
+                "emoji"
+            ],
+            "time": "2017-03-04T06:59:20+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
