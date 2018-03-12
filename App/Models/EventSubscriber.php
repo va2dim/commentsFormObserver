@@ -4,6 +4,9 @@ namespace App\Models;
 
 use App\Model;
 
+use Emojione\Client;
+use Emojione\Ruleset;
+
 class EventSubscriber extends Model implements \SplObserver
 {
     const TABLE = 'observers';
@@ -15,9 +18,16 @@ class EventSubscriber extends Model implements \SplObserver
         $this->subscriber = $subscriber;
     }
 
-    public function update(\SplSubject $subject) {
-        echo $this->subscriber.' is subscribed to <b>'.$subject->getContent().'</b><br>';
+    public function update(\SplSubject $subject)
+    {
+        $client = new Client(new Ruleset());
+
+        if(!empty($subject->getContent())) {
+            $emojiImageContent =  $client->toImage($subject->getContent());
+        }
+
+//$client->toImage(":) :-( 😆 :smile: :joy: 😂 ")
+
+        echo $this->subscriber.' is subscribed to comment '.$emojiImageContent.'<br>';
     }
-
-
 }
