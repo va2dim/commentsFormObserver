@@ -40,27 +40,10 @@ abstract class Model
         return empty($this->id);
     }
 
-    /**
-     * TODO delete()
-     */
-    public function delete()
-    {
-        $id = $this->id;
-        //$sql = ('DELETE FROM '.static::TABLE.' WHERE id=:id', static::class, [':id' => $id])[0];
-        //echo $sql;
-
-        $db = DB::instance();
-        $res = $db->query('DELETE FROM ' . static::TABLE . ' WHERE id=:id',
-          static::class, [':id' => $id])[0];
-        var_dump($res);
-    }
-
     public function save()
     {
         if ($this->isNew()) {
             $this->insert();
-        } else {
-            $this->update();
         }
     }
 
@@ -93,52 +76,4 @@ abstract class Model
         $db->execute($sql, $values);
     }
 
-
-    public function update()
-    {
-        if ($this->isNew()) {
-            return;
-        }
-
-        /*
-        echo 'ObjValue';
-        var_dump(key($this));
-        var_dump($this[key($this)]);
-        foreach($this as $k){
-
-            echo 'ObjValue kk '.$k.': '."|<br>";
-        }
-*/
-
-        $columns = [];
-        $values = [];
-        foreach ($this as $k => $v) {
-            if ('id' == $k || !isSet($v)) {
-                continue;
-            }
-            echo 'ObjValue ' . $k . ': ' . $v . "|<br>";
-            $columns[] = $k;
-            $values[':' . $k] = $v;
-
-        }
-        //var_dump($columns); echo "<br>"; var_dump($values); echo "<hr>";
-
-        $sql = 'UPDATE ' . static::TABLE . ' SET ';
-        $i = 0;
-        foreach ($values as $k => $v) {
-            //$sql .= $k.' = '.$v;
-            $sql .= $columns[$i] . ' = ' . $k;
-            $i++;
-            if (count($values) != $i) {
-                $sql .= ', ';
-            }
-            //echo count($values) .' != '. $i;
-        }
-        $sql .= ' WHERE id = ' . $this->id;
-
-        //var_dump($sql);
-
-        $db = DB::instance();
-        $db->execute($sql, $values);
-    }
 }

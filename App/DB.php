@@ -30,7 +30,7 @@ class DB
 
         $this->exc = new MultiException();
         try {
-            $this->dbh = new \PDO($dsn, 'root', '');
+            $this->dbh = new \PDO($dsn, $config->item['db']['default']['user'], $config->item['db']['default']['password']);
         } catch (\PDOException $pdo_e) {
             //var_dump($e->getMessage());
             $this->exc[] = new \App\Exceptions\DB($pdo_e->getMessage());

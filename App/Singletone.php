@@ -6,7 +6,6 @@ namespace App;
 trait Singletone
 {
     protected static $instance;
-    public $counter;
 
     protected function __construct()
     {
@@ -19,5 +18,4 @@ trait Singletone
         }
         return static::$instance;
     }
-
 }

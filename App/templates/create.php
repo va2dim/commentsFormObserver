@@ -31,8 +31,8 @@
         <div class="form-group">
             <label for="select" class="col-lg-1 control-label">Автор</label>
             <div class="col-lg-11">
-                <input class="form-control" id="author_id" name="author_id"
-                       placeholder="author ID" type="number">
+                <input class="form-control" id="author" name="author"
+                       placeholder="Author name" type="text">
 <?php /*
                 if (isset($comment->author)):
                     echo $comment->author->name;

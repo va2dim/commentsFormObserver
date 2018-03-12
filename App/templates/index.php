@@ -27,7 +27,7 @@
 foreach ($comments as $comment): ?>
     <div class="panel panel-info">
         <div class="panel-heading"><a
-                    href="<?php echo $uri; ?>/comment/author/<?php echo $comment->author_id; ?>"><?php echo $comment->author_id; ?></a>
+                    href="<?php echo $uri; ?>/comment/author/<?php echo $comment->author; ?>"><?php echo $comment->author; ?></a>
         </div>
         <div class="panel-body"><?php echo $comment->body; ?><a
                     href="<?php echo $uri; ?>&id=<?php echo $comment->id; ?>">
