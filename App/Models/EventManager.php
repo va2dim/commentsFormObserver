@@ -6,13 +6,15 @@ use App\Model;
 use App\Singletone;
 use SplObserver;
 
+/**
+ * Subject, who makes comments (Observable)
+ */
 class EventManager extends Model implements \SplSubject
 {
     use Singletone;
 
     const TABLE = 'comments';
 
-    public $parent_id;
     public $body;
     public $author;
 
@@ -22,11 +24,21 @@ class EventManager extends Model implements \SplSubject
     {
     }
 
+    /**
+     * Attach Observer to Event (Observerable)
+     * @param \SplObserver $observer
+     * @return void
+     */
     public function attach(SplObserver $observer)
     {
         $this->observers[] = $observer;
     }
 
+    /**
+     * Detach Observer from Event (Observerable)
+     * @param \SplObserver $observer
+     * @return void
+     */
     public function detach(SplObserver $observer)
     {
         $key = array_search($observer,$this->observers, true);
@@ -35,6 +47,10 @@ class EventManager extends Model implements \SplSubject
         }
     }
 
+    /**
+     * Notify Observers about Event (Observerable)
+     * @return void
+     */
     public function notify()
     {
         foreach ($this->observers as $value) {
@@ -42,10 +58,29 @@ class EventManager extends Model implements \SplSubject
         }
     }
 
+    /**
+     * Get content of Comment body
+     * @return string
+     */
     public function getContent() {
         return $this->body;
     }
 
+    /**
+     * Set content for Comment body (need for saving Unicode native text in DB, through convert to shortName)
+     * @param string $body
+     * @return void
+     */
+    public function setContent($body) {
+        $this->body = $body;
+
+    }
+
+    /**
+     * Notification Event for Observers
+     * @param string $body
+     * @return void
+     */
     public function onSubmit($body)
     {
         $this->body = $body;

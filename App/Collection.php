@@ -6,5 +6,4 @@ class Collection
   implements \ArrayAccess, \Iterator
 {
     use TCollection;
-
 }

@@ -3,11 +3,7 @@
 namespace App;
 
 
-class MultiException
-  extends \Exception
-  implements \ArrayAccess, \Iterator
+class MultiException extends \Exception implements \ArrayAccess, \Iterator
 {
     use TCollection;
-
-
 }

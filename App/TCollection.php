@@ -2,11 +2,12 @@
 
 namespace App;
 
-
+/**
+ * Trait TCollection implements work with collection
+ * @package App
+ */
 trait TCollection
 {
-
-
     protected $data = [];
 
     /**
@@ -101,5 +102,4 @@ trait TCollection
     {
         reset($this->data);
     }
-
 }

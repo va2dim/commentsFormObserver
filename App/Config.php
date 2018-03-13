@@ -2,7 +2,10 @@
 
 namespace App;
 
-
+/**
+ * Class Config for taking declared DB params (./config.php)
+ * @package App
+ */
 class Config
   implements \ArrayAccess//, \Iterator
 {
@@ -13,10 +16,7 @@ class Config
 
     protected function __construct()
     {
-
-        //self::$instance =
         $this->item = include __DIR__ . '/../config.php';
-        //var_dump(self::$instance);
     }
 
 }

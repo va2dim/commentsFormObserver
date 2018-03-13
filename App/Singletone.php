@@ -2,7 +2,10 @@
 
 namespace App;
 
-
+/**
+ * Trait Singletone implement Singletone pattern
+ * @package App
+ */
 trait Singletone
 {
     protected static $instance;
